@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
-import Display from "./Display";
+import Display from "./display/Display";
 
 export default function App() {
     const [values, setValues] = useState('');

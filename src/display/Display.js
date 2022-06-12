@@ -1,7 +1,7 @@
 import React from 'react';
 import MoorseDisplay from "./MoorseDisplay";
 import AffineDisplay from "./AffineDisplay";
-
+import VigenereDisplay from "./VigenereDisplay";
 
 export default function Display({values}) {
 
@@ -19,6 +19,6 @@ export default function Display({values}) {
         return (<AffineDisplay/>)
     }
     else if (values.cipher==='vigenere'){
-        return (<MoorseDisplay/>)
+        return (<VigenereDisplay/>)
     }
 }

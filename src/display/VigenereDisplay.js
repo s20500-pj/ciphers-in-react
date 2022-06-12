@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
-import Affine from "./Affine";
+import Vigenere from "../engine/Vigenere";
 
 export default function AffineDisplay() {
     const [values, setValues] = useState('');
@@ -14,14 +14,13 @@ export default function AffineDisplay() {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text" placeholder="normalText" {...register("normalText")} />
-                <input type="number" min="0" max="100"  placeholder="3" {...register("key1")} />
-                <input type="number" min="0" max="100"  placeholder="3" {...register("key2")} />
+                <input type="text" placeholder="key" {...register("key1")} />
                 <input {...register("toCode")} type="radio" value="code"/>Szyfruj
                 <input {...register("toCode")} type="radio" value="decode"/>Deszyfruj
 
                 <input type="submit"/>
             </form>
-            <Affine text={values.normalText} toCode={values.toCode} key1={values.key1} key2={values.key2}/>
+            <Vigenere text={values.normalText} toCode={values.toCode} key1={values.key1}/>
         </div>
     );
 }

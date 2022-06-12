@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
-import Moorse from "./Moorse";
+import Affine from "../engine/Affine";
 
-export default function MoorseDisplay() {
+export default function AffineDisplay() {
     const [values, setValues] = useState('');
     const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -13,16 +13,15 @@ export default function MoorseDisplay() {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="normalText" {...register("normalText", {
-                    required: true,
-                    maxLength: 255
-                })} />
+                <input type="text" placeholder="normalText" {...register("normalText")} />
+                <input type="number" min="0" max="100"  placeholder="3" {...register("key1")} />
+                <input type="number" min="0" max="100"  placeholder="3" {...register("key2")} />
                 <input {...register("toCode")} type="radio" value="code"/>Szyfruj
                 <input {...register("toCode")} type="radio" value="decode"/>Deszyfruj
 
                 <input type="submit"/>
             </form>
-            <Moorse text={values.normalText} toCode={values.toCode}/>
+            <Affine text={values.normalText} toCode={values.toCode} key1={values.key1} key2={values.key2}/>
         </div>
     );
 }

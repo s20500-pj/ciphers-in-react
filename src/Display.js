@@ -1,5 +1,6 @@
 import React from 'react';
-import Moorse from "./Moorse";
+import MoorseDisplay from "./MoorseDisplay";
+import AffineDisplay from "./AffineDisplay";
 
 
 export default function Display({values}) {
@@ -12,12 +13,12 @@ export default function Display({values}) {
         );
     }
     if (values.cipher==='morse'){
-        return (<Moorse text={values.normalText} toCode={values.toCode}/>)
+        return (<MoorseDisplay/>)
     }
     else if (values.cipher==='affine'){
-        return (<Moorse text={values.normalText} toCode={values.toCode}/>)
+        return (<AffineDisplay/>)
     }
     else if (values.cipher==='vigenere'){
-        return (<Moorse text={values.normalText} toCode={values.toCode}/>)
+        return (<MoorseDisplay/>)
     }
 }

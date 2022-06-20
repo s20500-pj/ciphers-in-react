@@ -15,7 +15,7 @@ function checkCoprime(a, b) {
 export const encode = (phrase, a, b) => {
     let result = "";
     let resultArray = [];
-    if(checkCoprime(a, M)){
+    if (checkCoprime(a, M)) {
         return "Error: klucz a musi być liczbą pierwszą"
     }
     for (const ele of phrase) {
@@ -51,7 +51,7 @@ function calculateMMI(a) {
 
 export const decode = (phrase, a, b) => {
     let result = "";
-    if(checkCoprime(a, M)){
+    if (checkCoprime(a, M)) {
         return "Error: klucz a musi być liczbą pierwszą"
     }
     for (const ele of phrase) {

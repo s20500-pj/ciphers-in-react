@@ -13,8 +13,8 @@ export default function AffineDisplay() {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="normalText" {...register("normalText")} />
-                <input type="text" placeholder="key" {...register("key1")} />
+                <input type="text" placeholder="normalText" {...register("normalText", {required: true})} />
+                <input type="text" placeholder="key" {...register("key1", {required: true})} />
                 <input {...register("toCode")} type="radio" value="code"/>Szyfruj
                 <input {...register("toCode")} type="radio" value="decode"/>Deszyfruj
 

@@ -1,20 +1,10 @@
 import React from 'react';
 
-/**
- * Check if the Character is letter or not
- * @param {String} str - character to check
- * @return {object} An array with the character or null if isn't a letter
- */
-function isLetter (str) {
+function isLetter(str) {
     return str.length === 1 && str.match(/[a-zA-Z]/i)
 }
 
-/**
- * Check if is Uppercase or Lowercase
- * @param {String} character - character to check
- * @return {Boolean} result of the checking
- */
-function isUpperCase (character) {
+function isUpperCase(character) {
     if (character === character.toUpperCase()) {
         return true
     }
@@ -23,13 +13,7 @@ function isUpperCase (character) {
     }
 }
 
-/**
- * Encrypt a Vigenere cipher
- * @param {String} message - string to be encrypted
- * @param {String} key - key for encrypt
- * @return {String} result - encrypted string
- */
-function encode (message, key) {
+function encode(message, key) {
     let result = ''
 
     for (let i = 0, j = 0; i < message.length; i++) {
@@ -48,13 +32,7 @@ function encode (message, key) {
     return result
 }
 
-/**
- * Decrypt a Vigenere cipher
- * @param {String} message - string to be decrypted
- * @param {String} key - key for decrypt
- * @return {String} result - decrypted string
- */
-function decode (message, key) {
+function decode(message, key) {
     let result = ''
 
     for (let i = 0, j = 0; i < message.length; i++) {

@@ -13,9 +13,9 @@ export default function AffineDisplay() {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="normalText" {...register("normalText")} />
-                <input type="number" min="0" max="100"  placeholder="3" {...register("key1")} />
-                <input type="number" min="0" max="100"  placeholder="3" {...register("key2")} />
+                <input type="text" placeholder="normalText" {...register("normalText", {required: true})} />
+                <input type="number" min="0" max="100" placeholder="3" {...register("key1", {required: true})} />
+                <input type="number" min="0" max="100" placeholder="3" {...register("key2", {required: true})} />
                 <input {...register("toCode")} type="radio" value="code"/>Szyfruj
                 <input {...register("toCode")} type="radio" value="decode"/>Deszyfruj
 

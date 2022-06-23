@@ -53,8 +53,14 @@ function decode(message, key) {
 
 export default function Vigenere({text, toCode, key1}) {
     if (toCode === 'code') {
-        return (<input type="text" value={encode(text, key1)}/>)
+        return (<div className="col-md-4 mb-3">
+            <label htmlFor="validationDefault01">Wynik</label>
+            <input className={'form-control form-control-lg'} type="text" value={encode(text, key1)}/>
+        </div>)
     } else if (toCode === 'decode') {
-        return (<input type="text" value={decode(text, key1)}/>)
+        return (<div className="col-md-4 mb-3">
+            <label htmlFor="validationDefault01">Wynik</label>
+            <input className={'form-control form-control-lg'} type="text" value={decode(text, key1)}/>
+        </div>)
     }
 }

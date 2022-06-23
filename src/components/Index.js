@@ -14,16 +14,23 @@ export default function Index() {
         setValues(e);
     }
 
-    return (
-        <div>
-            <form className="form-select" aria-label="Default select example" onChange={handleSubmit(onSubmit)}>
-                <select {...register("cipher")}>
-                    <option value="morse">morse</option>
-                    <option value="affine">affine</option>
-                    <option value="vigenere">vigenere</option>
-                </select>
+    return (<body className="d-flex flex-column min-vh-100">
+        <div className={'container'}>
+            <form onChange={handleSubmit(onSubmit)}>
+                <div className="col-md-4 mb-3">
+                    <label htmlFor="exampleFormControlSelect1">Wybierz rodzaj szyfru</label><br/>
+                    <select {...register("cipher")}>
+                        <option value="morse">morse</option>
+                        <option value="affine">affine</option>
+                        <option value="vigenere">vigenere</option>
+                    </select>
+                </div>
             </form>
             <Display values={values}/>
+
         </div>
+        <footer className={'mt-auto mx-auto'}><a className={'link-info display-2 text-decoration-none'}
+                                                 href="/about">ABOUT</a></footer>
+        </body>
     );
 }

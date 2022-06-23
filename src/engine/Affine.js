@@ -74,8 +74,15 @@ export const decode = (phrase, a, b) => {
 };
 export default function Affine({text, toCode, key1, key2}) {
     if (toCode === 'code') {
-        return (<input type="text" value={encode(text, parseInt(key1), parseInt(key2))}/>)
+        return (<div className="col-md-4 mb-3">
+            <label htmlFor="validationDefault01">Wynik</label>
+            <input className={'form-control form-control-lg'} type="text"
+                   value={encode(text, parseInt(key1), parseInt(key2))}/>
+        </div>)
     } else if (toCode === 'decode') {
-        return (<input type="text" value={decode(text, parseInt(key1), parseInt(key2))}/>)
+        return (<div className="col-md-4 mb-3">
+            <label htmlFor="validationDefault01">Wynik</label>
+            <input className={'form-control form-control-lg'} value={decode(text, parseInt(key1), parseInt(key2))}/>
+        </div>)
     }
 }

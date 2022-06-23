@@ -1,7 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
-import {useForm} from 'react-hook-form';
-import Display from "./display/Display";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Error from './components/Error';
 import About from './components/About';

@@ -4,5 +4,7 @@ import {useLocation} from 'react-router-dom';
 
 export default function Error() {
     let location = useLocation();
-    return <p>brak takiej podstrony jak: {location.pathname}</p>;
+    return <div><a className={'link-info display-2 text-decoration-none'} href="/">HOME</a>
+        <p>brak takiej podstrony jak: {location.pathname}</p>
+    </div>
 }

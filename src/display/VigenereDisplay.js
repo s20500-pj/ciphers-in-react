@@ -19,13 +19,15 @@ export default function AffineDisplay() {
                            placeholder="normalText" {...register("normalText", {required: true})} />
                 </div>
                 <div className="col-md-4 mb-3">
-                    <label htmlFor="validationDefault01">Klucz</label>
+                    <label htmlFor="validationDefault01">Klucz/zaszyfrowany tekst</label>
                     <input className={'form-control form-control-lg'} type="text"
                            placeholder="key" {...register("key1", {required: true})} />
                 </div>
                 <div className="col-md-4 mb-3">
                     <input className={'form-check-input'} {...register("toCode")} type="radio" value="code"/>Szyfruj
                     <input className={'form-check-input'} {...register("toCode")} type="radio" value="decode"/>Deszyfruj
+                    <input className={'form-check-input'} {...register("toCode")} type="radio" value="key"/>Zgadnij
+                    klucz
                 </div>
                 <input className={'btn btn-primary'} type="submit"/>
             </form>

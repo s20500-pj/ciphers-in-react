@@ -1,8 +1,8 @@
 import React from 'react';
 
 const M = 26;
-const ordArray = "abcdefghijklmnopqrstuvwxyz".split("");
-const numArray = "1234567890".split("");
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+const numArray = "1234567890.,?".split("");
 
 function checkCoprime(a, b) {
     for (let i = 2; i < b; i++) {
@@ -14,7 +14,6 @@ function checkCoprime(a, b) {
 
 export const encode = (phrase, a, b) => {
     let result = "";
-    let resultArray = [];
     if (checkCoprime(a, M)) {
         return "Error: klucz a musi być liczbą pierwszą"
     }
@@ -22,20 +21,13 @@ export const encode = (phrase, a, b) => {
         if (numArray.includes(ele)) {
             result += ele;
         }
-        if (ordArray.includes(ele.toLowerCase())) {
+        if (alphabet.includes(ele.toLowerCase())) {
             const cipherOrd =
-                (a * ordArray.indexOf(ele.toLowerCase()) + b) % M;
-            result += ordArray[cipherOrd];
-        }
-        if (result.length === 5) {
-            resultArray.push(result);
-            result = "";
+                (a * alphabet.indexOf(ele.toLowerCase()) + b) % M;
+            result += alphabet[cipherOrd];
         }
     }
-    if (result) {
-        resultArray.push(result);
-    }
-    return resultArray.join(" ");
+    return result;
 };
 
 function calculateMMI(a) {
@@ -58,16 +50,16 @@ export const decode = (phrase, a, b) => {
         if (numArray.includes(ele)) {
             result += ele;
         }
-        if (ordArray.includes(ele.toLowerCase())) {
+        if (alphabet.includes(ele.toLowerCase())) {
             let cipher =
-                calculateMMI(a) * (ordArray.indexOf(ele.toLowerCase()) - b);
+                calculateMMI(a) * (alphabet.indexOf(ele.toLowerCase()) - b);
             if (cipher < 0) {
                 while (cipher < 0) {
                     cipher += M;
                 }
             }
             let cipherOrd = cipher % M;
-            result += ordArray[cipherOrd];
+            result += alphabet[cipherOrd];
         }
     }
     return result;
